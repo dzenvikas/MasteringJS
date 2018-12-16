@@ -15,12 +15,12 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 // var massJohn = alert('Enter mass(kg) of John:');
 // var heightMark = alert('Enter height(meters) of Mark:');
 // var heightJohn = alert('Enter height(meters) of John:');
-var massMark = 62;
+var massMark = 62; //kg
 var massJohn = 72;
-var heightMark = 1.73;
+var heightMark = 1.73;  //meters
 var heightJohn = 1.73;
 
-BMIMark = massMark / heightMark^2;
-BMIJohn = massJohn / heightJohn^2;
+var BMIMark = massMark / heightMark^2;
+var BMIJohn = massJohn / heightJohn^2;
 console.log(BMIMark, BMIJohn);
 console.log('Is Mark\'s BMI higher than John\'s?', BMIMark > BMIJohn);

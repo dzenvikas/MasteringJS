@@ -89,7 +89,7 @@ console.log(typeof x);
 /*************************
  * Operator precedence
 */ 
-
+/*
 var now = 2018;
 var yearJohn = 1989;
 var fullAge = 18;
@@ -119,5 +119,89 @@ console.log(x);
 // console.log(x);
 x--;
 console.log(x);
+*/
+
+
+/*************************
+ * IF / else statement
+*/ 
+
+var firstName = 'John';
+var civilStatus = 'single';
+/*
+if (civilStatus === 'married') {
+    console.log(firstName + ' is married.');
+} else {
+    console.log(firstName + ' will hopefully marry soon.');
+}
+*/
+/*
+var isMarried = false;
+if (isMarried) {
+    console.log(firstName + ' is married.');
+} else {
+    console.log(firstName + ' will hopefully marry soon.');
+}
+*/
+
+
+/*************************
+ * The Ternary Operator and Switch Statements
+*/ 
+
+// The Ternary Operator
+
+var firstName = 'John';
+var age = 18;
+
+age >= 18 ? console.log(firstName + ' drinks buttermilk.')
+    : console.log(firstName + ' drinks milk.');
+
+var drink = age >= 18 ? 'buttermilk' : 'milk.';
+console.log(drink);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
