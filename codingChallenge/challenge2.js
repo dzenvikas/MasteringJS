@@ -13,11 +13,11 @@ var scoreTeamMike = [116, 94, 123];
 var scoreTeamMarry = [97, 134, 105];
 
 function average(scores) {
-    var avg = 0;
+    var total = 0;
     for (var i = 0; i < scores.length; i++) {
-        avg += scores[i];
+        total += scores[i];
     }
-    return avg;
+    return total / scores.length;
 }
 
 var avgTeamJohn = average(scoreTeamJohn);
@@ -28,19 +28,21 @@ var avgTeamMarry = average(scoreTeamMarry);
 if ( avgTeamJohn === avgTeamMike && avgTeamJohn === avgTeamMarry) {
     console.log('TIE.' + 'Mike Team: ' + avgTeamMike +
     'John Team: ' + avgTeamJohn + 'Marry Team: ' + avgTeamMarry );
-}
+} else
 // John team Wins
 if ( avgTeamJohn > avgTeamMike && avgTeamJohn > avgTeamMarry) {
     console.log('John team wins!' + 'Mike Team: ' + avgTeamMike +
     'John Team: ' + avgTeamJohn + 'Marry Team: ' + avgTeamMarry );
-}
+} else
 // Mike team Wins
 if ( avgTeamMike > avgTeamJohn && avgTeamMike > avgTeamMarry) {
     console.log('Mike team wins!' + 'Mike Team: ' + avgTeamMike +
     'John Team: ' + avgTeamJohn + 'Marry Team: ' + avgTeamMarry );
-}
+} else
 // Mike team Wins
 if ( avgTeamMarry > avgTeamJohn && avgTeamMarry > avgTeamMike) {
     console.log('Marry team wins!' + 'Mike Team: ' + avgTeamMike +
     'John Team: ' + avgTeamJohn + 'Marry Team: ' + avgTeamMarry );
+} else {
+    console.log('Something went wrong!');
 }
