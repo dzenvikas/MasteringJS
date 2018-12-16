@@ -149,8 +149,7 @@ if (isMarried) {
  * The Ternary Operator and Switch Statements
 */ 
 
-// The Ternary Operator
-
+// Ternary operator
 var firstName = 'John';
 var age = 18;
 
@@ -161,9 +160,37 @@ var drink = age >= 18 ? 'buttermilk' : 'milk.';
 console.log(drink);
 
 
+// Switch statement
+var job = 'instructor';
+switch (job) {
+    case 'teacher':
+    case 'instructor':
+        console.log(firstName + ' teaches kids how to code.');
+        break;
+    case 'driver':
+        console.log(firstName + 'drives an Uber.');
+        break;
+    case 'designer':
+        console.log(firstName + ' desings beautiful websites.');
+        break;
+    default:
+        console.log(firstName + ' does something else.');
+}
 
 
-
+switch (true) {
+    case age < 13:
+        console.log(firstName + ' is a boy.');
+        break;
+    case age >= 13 && age < 18:
+        console.log(firstName + ' is a teenager.');
+        break;
+    case age >= 18:
+        console.log(firstName + ' is a young man.');
+        break;
+    default:
+        console.log(firstName + ' is a man.');
+}
 
 
 
