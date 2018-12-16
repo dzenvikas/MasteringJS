@@ -222,7 +222,7 @@ if (height !== '23') { // NO type coercion
 /*************************
  * Functions
 */ 
-
+/*
 function calculateAge(birthYear) {
     return 2018 - birthYear;
 }
@@ -244,11 +244,33 @@ function yearsUntilRetirement(year, firstName) {
 yearsUntilRetirement(1990, 'John');
 yearsUntilRetirement(1948, 'Mike');
 yearsUntilRetirement(1969, 'Jane');
+*/
 
 
+/*************************
+ * Function statements and expressions
+*/ 
 
+//function declaration
+// function whatDoYouDo(job, firstName);
 
+//function expression
+var whatDoYouDo = function(job, firstName) {
+    switch(job) {
+        case 'teacher':
+            return firstName + ' teaches kids how to code.';
+        case 'driver':
+            return firstName + ' drives a Truck.';
+        case 'designer':
+            return firstName + ' designs a beautiful website.';
+        default:
+            return firstName + ' does something else.';
+    }
+};
 
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('designer', 'Jane'));
+console.log(whatDoYouDo('retired', 'Mark'));
 
 
 
