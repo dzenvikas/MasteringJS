@@ -201,7 +201,7 @@ switch (true) {
 
 var height;
 
-var height = 0;
+var height = 23;
 
 if(height || height === 0) {
     console.log('Variable is defined');
@@ -209,7 +209,13 @@ if(height || height === 0) {
     console.log('Variable has NOT been defined.');
 }
 
-
+// Equality operators
+if (height == '23') { // type coercion
+    console.log('The == operator does type coercion!');
+}
+if (height !== '23') { // NO type coercion
+    console.log('The === operator does NOT type coercion!');
+}
 
 
 
