@@ -277,7 +277,7 @@ console.log(whatDoYouDo('retired', 'Mark'));
 /*************************
  * Arrays
 */ 
-
+/*
 // Init new array;
 var names = ['John', 'Mark', 'Jane'];
 var years = new Array(1990, 1969, 1948);
@@ -308,13 +308,34 @@ console.log(john.indexOf(1990)); //returns index of element
 
 var isDesinger = john.indexOf('designer') === -1 ? 'John is NOT a desinger.' : 'John is a desinger.';
 console.log(isDesinger);
+*/
+
+/*************************
+ * Objects and properties
+*/ 
+
+// Object literal
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
 
 
+console.log(john);
+console.log(john.lastName);
+var x = 'birthYear';
+console.log(john[x]);
 
 
-
-
-
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
 
 
 
