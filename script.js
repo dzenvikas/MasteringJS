@@ -125,10 +125,10 @@ console.log(x);
 /*************************
  * IF / else statement
 */ 
-
+/*
 var firstName = 'John';
 var civilStatus = 'single';
-/*
+
 if (civilStatus === 'married') {
     console.log(firstName + ' is married.');
 } else {
@@ -148,7 +148,7 @@ if (isMarried) {
 /*************************
  * The Ternary Operator and Switch Statements
 */ 
-
+/*
 // Ternary operator
 var firstName = 'John';
 var age = 18;
@@ -191,8 +191,23 @@ switch (true) {
     default:
         console.log(firstName + ' is a man.');
 }
+*/
 
+/*************************
+ * Truthy and Falsy values and Equality operator
+*/ 
+// falsy values: undefined, null, '', 0, NaN
+// truthy values: NOT falsy values
 
+var height;
+
+var height = 0;
+
+if(height || height === 0) {
+    console.log('Variable is defined');
+} else {
+    console.log('Variable has NOT been defined.');
+}
 
 
 
