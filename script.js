@@ -341,7 +341,7 @@ console.log(jane);
 /*************************
  * Objects and methods
 */ 
-
+/*
 var john = {
     firstName: 'John',
     lastName: 'Smith',
@@ -358,3 +358,67 @@ var john = {
 // console.log(john.calcAge());
 john.calcAge();
 console.log(john);
+*/
+
+
+/*************************
+ * Loops and iterations
+*/ 
+
+/*
+for (var i = 1; i <= 10; i++) {
+    console.log(i);
+}
+*/
+// var john = ['John', 'Smith', 1990, 'teacher', false];
+// for (var i = 0; i < john.length; i++) {
+//     console.log(john[i]);
+// }
+/*
+//while loop
+var i = 0;
+while(i < john.length) {
+    console.log(john[i]);
+    i++;
+}
+*/
+// continue and break
+var john = ['John', 'Smith', 1990, 'teacher', false];
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') {
+        continue; // continues the loop without executing below code lines
+    }
+    console.log(john[i]);
+}
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') break; //breaks the loop
+    console.log(john[i]);
+}
+
+// Looping backwards
+for(i = john.length - 1; i >= 0; i--) {
+    console.log(john[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
