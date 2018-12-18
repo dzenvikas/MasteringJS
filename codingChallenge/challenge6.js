@@ -66,12 +66,20 @@ c) correct answer (I would use a number for this)
     
     var questions = [q1, q2, q3];
     
-    var x = Math.floor(Math.random() * questions.length);
-    
-    questions[x].displayQuestion();
-    var userAns = parseInt(prompt('Which one is correct?'));
-    console.log(userAns);
-    questions[x].checkAnswer(userAns);
+    function nextQuestion() {
+        var x = Math.floor(Math.random() * questions.length);
+        questions[x].displayQuestion();
+        var userAns = prompt('Which one is correct?');
+        
+        if (userAns !== 'exit') {
+            questions[x].checkAnswer(parseInt(userAns));
+            nextQuestion();
+        } else if (userAns === 'exit') {
+            console.log('Game exit');
+        }
+    };
+    nextQuestion();
+
 })();
 
 
