@@ -162,7 +162,7 @@ interviewQuestion('teacher')('John');
 /*************************
  * Bind, Call, apply
 */ 
-
+/*
 var john = {
     name: 'John',
     age: 26,
@@ -202,19 +202,6 @@ johnFriendly('night');
 
 var emilyFormal = john.presentation.bind(emily, 'formal');
 emilyFormal('afternoon');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
