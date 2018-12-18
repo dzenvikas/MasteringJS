@@ -69,7 +69,7 @@ console.log(obj.city);
 /*************************
  * Function returning function
 */ 
-
+/*
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function (name) {
@@ -96,6 +96,57 @@ designerQuestion('Mark');
 designerQuestion('Mike');
 
 interviewQuestion('teacher')('Vivek');
+*/
+
+/*************************
+ * IIFE
+*/ 
+
+function game() {
+    var score = Math.random*10;
+    console.log(score >= 5);
+}
+game();
+
+
+(function(){
+    var score = Math.random*10;
+    console.log(score >= 5);
+})();
+
+(function(goodLuck){
+    var score = Math.random*10;
+    console.log(score >= 5);
+})(5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
