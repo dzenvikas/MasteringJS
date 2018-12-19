@@ -111,7 +111,11 @@ var UIController = (function(){
         inputValue: '.add__value',
         inputBtn: '.add__btn',
         incomeContainer: '.income__list',
-        expensesContainer: '.expenses__list'
+        expensesContainer: '.expenses__list',
+        budgetLabel: '.budget__value',
+        incomeLabel: '.budget__income--value',
+        expensesLabel: '.budget__expenses--value',
+        percentageLabel: '.budget__expenses--percentage'
     }
 
     return {
@@ -141,7 +145,7 @@ var UIController = (function(){
 
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         },
-        clearFields: function(){
+        clearFields: function() {
             var fields, fieldsArr;
             fields = document.querySelectorAll(DOMStrings.inputDesc + ', ' + DOMStrings.inputValue);
             fieldsArr = Array.prototype.slice.call(fields);
@@ -149,6 +153,12 @@ var UIController = (function(){
                 current.value = "";
             });
             fieldsArr[0].focus();
+        },
+        displayBudget: function(obj) {
+            document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
+            document.querySelector(DOMStrings.incomeLabel).textContent = obj.totalInc;
+            document.querySelector(DOMStrings.expensesLabel).textContent = obj.totalExp;
+            document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage + ' %';
         }
     }
 
@@ -175,7 +185,7 @@ var controller = (function(budgetCtrl, UICtrl){
         budgetCtrl.calcBudget();
 
         // return budget
-        var budget = budgetCtrl.getBudget();
+        return budgetCtrl.getBudget();
 
         // display on UI
         console.log(budget);
@@ -199,9 +209,10 @@ var controller = (function(budgetCtrl, UICtrl){
             UICtrl.clearFields();
     
             //calculate & update the budget
-            updateBudget();
+            var budget = updateBudget();
 
             //display the budget on the UI
+            UICtrl.displayBudget(budget);
         }
         
     };
