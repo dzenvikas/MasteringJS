@@ -23,6 +23,16 @@ var budgetController = (function(){
         this.value = value;
     };
 
+    var calcTotal = function(type) {
+        var sum = 0;
+        data.allItems[type].forEach( function(current) {
+            sum += current.value;
+
+        });
+        data.totals[type] = sum;
+    }
+
+
     var data = {
         allItems: {
             exp: [],
@@ -31,8 +41,11 @@ var budgetController = (function(){
         totals: {
             exp: 0,
             inc: 0
-        }
-    }
+        },
+        budget: 0,
+        percentage: -1 // does not exsisi at this point
+    };
+
 
     return {
         addItem: function(type, desc, val) {
@@ -58,6 +71,31 @@ var budgetController = (function(){
         },
         testing: function(){
             console.log(data);
+        },
+        calcBudget: function() {
+
+            // calc total income and expenses
+            calcTotal('inc');
+            calcTotal('exp');
+
+            // calculate the budget: income - expense
+            data.budget = data.totals.inc - data.totals.exp;
+
+            // calc percentage of income that we spent
+            if (data.totals.inc > 0) {
+                data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+            } else {
+                data.percentage = -1;
+            }
+
+        },
+        getBudget: function() {
+            return {
+                budget: data.budget,
+                totalInc: data.totals.inc,
+                totalExp: data.totals.exp,
+                percentage: data.percentage
+            }
         }
     }
 
@@ -134,10 +172,13 @@ var controller = (function(budgetCtrl, UICtrl){
 
     var updateBudget = function(){
         //calc budget
+        budgetCtrl.calcBudget();
 
         // return budget
+        var budget = budgetCtrl.getBudget();
 
         // display on UI
+        console.log(budget);
     }
 
     var ctrlAddItem = function(){
@@ -159,6 +200,7 @@ var controller = (function(budgetCtrl, UICtrl){
     
             //calculate & update the budget
             updateBudget();
+
             //display the budget on the UI
         }
         
