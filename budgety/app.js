@@ -69,13 +69,24 @@ var budgetController = (function(){
             data.allItems[type].push(newItem);
             return newItem;
         },
-        // testing: function(){
-        //     console.log(data);
-        // },
-
-        deleteItem = function(type, id) {
-            data.allItems[type][id].splice(id, 1);
+        testing: function(){
             console.log(data);
+        },
+
+        deleteItem: function(type, id) {
+            var IDs, index;
+
+            IDs = data.allItems[type].map(function(current) {
+                return current.id;
+            });
+            console.log(IDs);
+
+            index = IDs.indexOf(id);
+            console.log(index);
+            if (index !== -1 ) {
+                data.allItems[type].splice(index, 1);
+            }
+
         },
 
         calcBudget: function() {
@@ -234,12 +245,12 @@ var controller = (function(budgetCtrl, UICtrl){
 
         if (itemID) {
             // item-1
-            splitID = itemID.splitID('-');
+            splitID = itemID.split('-');
             type = splitID[0];
-            ID = splitID[1];
+            ID = parseInt(splitID[1]);
 
             // delete item from data structure
-
+            budgetCtrl.deleteItem(type, ID);
             // delete item from UI
 
             // update and show new budget
