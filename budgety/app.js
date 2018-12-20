@@ -162,6 +162,12 @@ var UIController = (function(){
         dateLabel: '.budget__title--month'
     };
 
+    var nodeListForEach = function(list, callback) {    // custom forEach method
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
+    };
+
     var formatNumber = function(num, type) {
         var sign, numSplit, int, dec;
         // abs num
@@ -192,6 +198,18 @@ var UIController = (function(){
                 desc: document.querySelector(DOMStrings.inputDesc).value,
                 value: parseFloat(document.querySelector(DOMStrings.inputValue).value)
             }
+        },
+        changeType: function() {
+            var fields = document.querySelectorAll(
+                DOMStrings.inputType + ',' +
+                DOMStrings.inputDesc + ',' +
+                DOMStrings.inputValue
+            );
+
+            nodeListForEach(fields, function(current) {
+                current.classList.toggle('red-focus');
+                document.querySelector(DOMStrings.inputBtn).classList.toggle('red');
+            });
         },
         getDOMStings: function(){
             return DOMStrings;
@@ -243,11 +261,6 @@ var UIController = (function(){
         displayPercentages: function(percentages) {
             var fields = document.querySelectorAll(DOMStrings.expensesPercentageLabel); // returns a node list
 
-            var nodeListForEach = function(list, callback) {    // custom forEach method
-                for (var i = 0; i < list.length; i++) {
-                    callback(list[i], i);
-                }
-            };
             nodeListForEach(fields, function(current, index) {
                 if (percentages[index] > 0) {
                     current.textContent = percentages[index] + '%';
@@ -285,6 +298,7 @@ var controller = (function(budgetCtrl, UICtrl){
             }
         });
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+        document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changeType);
     };
 
     var updateBudget = function(){
