@@ -77,7 +77,7 @@ console.log(`${firstName} `.repeat(4));
 
 /////////////////////
 // Arrow Function
-
+/*
 const years = [1990, 1965, 1982, 1937];
 const currentYear = new Date().getFullYear();
 
@@ -91,23 +91,58 @@ console.log(ages5);
 // ES6
 let ages6 = years.map(el => currentYear - el);
 console.log(ages6);
+*/
 
+// Lexical 'this' keyword
+/*
+//ES5
+var box5 = {
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+        //ES5
+        // var self = this;
+        // document.querySelector('.green').addEventListener('click', function(){
+        //     var str = 'This is box number ' + self.position + ' and it is ' + self.color;
+        //     alert(str);
+        // });
 
+        //ES6
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        });
+    }
+}
 
+box5.clickMe();
+*/
 
+function Person(name) {
+    this.name = name;
+}
 
+// ES5
+Person.prototype.myFriends5 = function(friends) {
+    var arr = friends.map(function(el) {
+        return this.name + ' is friends with ' + el;
+    }.bind(this));
+    console.log(arr);
+}
 
+//ES6
+var friends = ['Bob', 'John', 'Mark'];
 
+new Person('John').myFriends5(friends);
 
+Person.prototype.myFriends5 = function(friends) {
+    var arr = friends.map(el => `${this.name} is friends with ${el}`);
+    console.log(arr);
+}
 
+var friends = ['Bob', 'John', 'Mark'];
 
-
-
-
-
-
-
-
+new Person('Mike').myFriends5(friends);
 
 
 
