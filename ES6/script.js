@@ -117,7 +117,7 @@ var box5 = {
 
 box5.clickMe();
 */
-
+/*
 function Person(name) {
     this.name = name;
 }
@@ -143,6 +143,55 @@ Person.prototype.myFriends5 = function(friends) {
 var friends = ['Bob', 'John', 'Mark'];
 
 new Person('Mike').myFriends5(friends);
+*/
+
+
+/////////////////////
+// Destructuring
+
+//ES5
+var john = ['John', 20];
+// var name = john[0];
+// var age = john[1];
+
+
+//ES6
+const [name, age] = ['John', 20];
+console.log(name, age);
+
+const obj = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+const { firstName, lastName} = obj;
+console.log(firstName, lastName);
+
+const { firstName: a, lastName: b} = obj;
+console.log(a, b);
+
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age2, retirement] = calcAgeRetirement(1994);
+console.log(age, retirement);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
