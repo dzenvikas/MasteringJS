@@ -42,7 +42,7 @@ console.log(c);
 
 /////////////////////
 // String literals
-
+/*
 let firstName = 'Vikas';    // Can be mutated
 let lastName = 'Kumar';
 const yearOfBirth = 1994;   // Can't be mutated
@@ -72,6 +72,29 @@ console.log(n.endsWith('R'));
 console.log(n.includes(' '));
 console.log(n.includes('kum'));
 console.log(`${firstName} `.repeat(4));
+*/
+
+
+/////////////////////
+// Arrow Function
+
+const years = [1990, 1965, 1982, 1937];
+const currentYear = new Date().getFullYear();
+
+// ES5
+var ages5 = years.map(function(el){
+    return currentYear - el;
+});
+
+console.log(ages5);
+
+// ES6
+let ages6 = years.map(el => currentYear - el);
+console.log(ages6);
+
+
+
+
 
 
 
