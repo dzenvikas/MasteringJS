@@ -71,6 +71,7 @@ console.log(n.startsWith('V'));
 console.log(n.endsWith('R'));
 console.log(n.includes(' '));
 console.log(n.includes('kum'));
+console.log(`${firstName} `.repeat(4));
 
 
 
