@@ -266,7 +266,7 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 
 //////////////
 // Rest Parameters
-
+/*
 //ES5
 function isFullAge5(){
     console.log(arguments);
@@ -289,27 +289,44 @@ function isFullAge6(...years){ //rest parameters
 }
 isFullAge6(1987, 1759, 2019, 1421);
 */
-
+/*
 function isFullAge6(limit, ...years){ //rest parameters
     console.log(years);
     years.forEach(cur => console.log((2016 - cur >= limit)));
 
 }
 isFullAge6(18, 1987, 1759, 2019, 1421);
+*/
 
 
+////////////////////////
+//Default Parameters
+/*
+//ES5
+function Person(firstName, lastName, yearOfBirth, nationality){
+    lastName === undefined ? lastName = 'Kumar' : lastName = lastName;
+    nationality === undefined ? nationality = 'Bharatiya' : nationality = nationality;
+    this.firstName = firstName;
+    this.lastName =  lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
 
+var vikas = new Person('Vikas', 'Kumar');
+var emily = new Person('Emily', 1994, 'Diaz', 'spanish');
+*/
 
+//ES6
 
+function Person(firstName, lastName = 'Kumar', yearOfBirth, nationality = 'Bharatiya') {
+    this.firstName = firstName;
+    this.lastName =  lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
 
-
-
-
-
-
-
-
-
+var preeti = new Person('Preeti');
+var preetam = new Person('Preetam', 'Das', 1697);
 
 
 
