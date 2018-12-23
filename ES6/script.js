@@ -182,7 +182,7 @@ console.log(age, retirement);
 
 /////////////////////
 // Arrays
-
+/*
 const boxes = document.querySelectorAll('.box');
 // console.log(boxes);
 
@@ -195,7 +195,7 @@ boxesArr5.forEach(function(cur){
 //ES6
 const boxesArr6 = Array.from(boxes);
 boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
-
+*/
 
 //ES5
 /*
@@ -206,7 +206,7 @@ for( var i = 0; i < boxesArr5.length; i++) {
     boxesArr5[i].textContent = 'I changed to blue!';
 }
 */
-
+/*
 //ES6
 for (const cur of boxesArr6) {
     if (cur.className.includes('blue')) {
@@ -228,5 +228,40 @@ console.log(ages[full.indexOf(true)]);
 //ES6
 console.log(ages.findIndex(cur => cur >= 18));
 console.log(ages.find(cur => cur >= 18));
+*/
+
+//////////////
+// Spread operator
+
+function addFourAges(a, b, c, d) {
+    return a + b + c + d;
+}
+var sum1 = addFourAges(18,30,12,21);
+console.log(sum1);
+
+//ES5
+var ages = [21, 12, 53, 45, 62];
+var sum2 = addFourAges.apply(null, ages);
+console.log(sum2);
+
+//ES6
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+
+
+const familySmith = ['John', 'Jane', 'Mark'];
+const familyMillar = ['Marry', 'Bob', 'Anna'];
+const bigFamily = [...familySmith, 'Funny', ...familyMillar];
+console.log(bigFamily);
+
+
+const h = document.querySelector('h1');
+const boxes = document.querySelectorAll('.box');
+const all = [h, ...boxes];
+console.log(all);
+
+Array.from(all).forEach(cur => cur.style.color = 'purple');
+
+
 
 
