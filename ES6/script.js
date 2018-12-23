@@ -333,7 +333,7 @@ var preetam = new Person('Preetam', 'Das', 1697);
 // Maps
 // set(), get(), has(), delete()
 
-
+/*
 //ES6
 const question = new Map();
 
@@ -355,6 +355,74 @@ for( let [key, value] of question.entries()) {  // returns in form of array and 
 }
 const UserAns = parseInt(prompt('Enter the correct answer: '));
 console.log(question.get(UserAns === question.get('correct')));
+*/
+
+////////////////////
+// Classes
+
+//ES5
+var Person5 = function(name, yearOfBirth, job){
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+Person5.prototype.calcAge = function() {
+    var age = new Date().getFullYear() - this.yearOfBirth;
+    console.log(age);
+}
+
+var vikas = new Person5('Vikas', 1947, 'CS Student');
+
+//ES6
+
+// class declaration
+class Person6 {
+    constructor (name, yearOfBirth, job){
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+    calcAge(){
+        var age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(age);
+    }
+
+    //static class
+    static greeting() {
+        console.log('Namaste!');
+    }
+}
+const modi = new Person6('Narendra Modi', 1955, 'Pradhan Mantri');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
