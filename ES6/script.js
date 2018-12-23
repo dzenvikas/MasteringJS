@@ -315,7 +315,7 @@ function Person(firstName, lastName, yearOfBirth, nationality){
 var vikas = new Person('Vikas', 'Kumar');
 var emily = new Person('Emily', 1994, 'Diaz', 'spanish');
 */
-
+/*
 //ES6
 
 function Person(firstName, lastName = 'Kumar', yearOfBirth, nationality = 'Bharatiya') {
@@ -327,10 +327,34 @@ function Person(firstName, lastName = 'Kumar', yearOfBirth, nationality = 'Bhara
 
 var preeti = new Person('Preeti');
 var preetam = new Person('Preetam', 'Das', 1697);
+*/
+
+////////////////
+// Maps
+// set(), get(), has(), delete()
 
 
+//ES6
+const question = new Map();
 
+question.set('question', 'What is the official name of the latest JavaScript version?');
+question.set(1, 'ES5');
+question.set(2, 'ES6');
+question.set(3, 'ES2015');
+question.set(4, 'ES7');
+question.set('correct', 3);
+question.set(true, '✅ Correct answer.');
+question.set(false, '❌ Wrong, please try again.');
+// console.log(question.size);  //get the size
 
+console.log(question.get('question'));
+for( let [key, value] of question.entries()) {  // returns in form of array and descontruct as key value pair
+    if (typeof(key) === 'number') {
+        console.log(`Answer ${key}: ${value}`);
+    }
+}
+const UserAns = parseInt(prompt('Enter the correct answer: '));
+console.log(question.get(UserAns === question.get('correct')));
 
 
 
