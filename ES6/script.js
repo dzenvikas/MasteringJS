@@ -232,7 +232,7 @@ console.log(ages.find(cur => cur >= 18));
 
 //////////////
 // Spread operator
-
+/*
 function addFourAges(a, b, c, d) {
     return a + b + c + d;
 }
@@ -261,6 +261,60 @@ const all = [h, ...boxes];
 console.log(all);
 
 Array.from(all).forEach(cur => cur.style.color = 'purple');
+*/
+
+
+//////////////
+// Rest Parameters
+
+//ES5
+function isFullAge5(){
+    console.log(arguments);
+    var argsArr = Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) >= 18);
+    })
+}
+
+isFullAge5(1987, 1759, 2019, 1421);
+
+
+//ES6
+/*
+function isFullAge6(...years){ //rest parameters
+    console.log(years);
+    years.forEach(cur => console.log((2016 - cur >= 18)));
+
+}
+isFullAge6(1987, 1759, 2019, 1421);
+*/
+
+function isFullAge6(limit, ...years){ //rest parameters
+    console.log(years);
+    years.forEach(cur => console.log((2016 - cur >= limit)));
+
+}
+isFullAge6(18, 1987, 1759, 2019, 1421);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
