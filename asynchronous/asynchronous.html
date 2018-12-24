@@ -66,7 +66,7 @@
         //     console.log(error);
         // });
 
-        
+
         /////////////////////
         // async await
 
@@ -77,8 +77,11 @@
             console.log(recipe);
             const related = await getRelated('Vikas Kumar');
             console.log(related);
+            return recipe;
         }
-        getRecipesAW();
+        getRecipesAW().then(result => {
+            console.log(`${result} is the best ever!`);
+        });
 
     </script>
 </body>
