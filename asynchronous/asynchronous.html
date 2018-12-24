@@ -50,21 +50,35 @@
             });
         };
 
-        getIDs
-        .then(IDs => {    // handles fulfilled promise
+        // getIDs
+        // .then(IDs => {    // handles fulfilled promise
+        //     console.log(IDs);
+        //     return getRecipe(IDs[2]); // returns
+        // })
+        // .then(recipe => {   // equal to what above then method returns
+        //     console.log(recipe);
+        //     return getRelated('Vikas Kumar');
+        // })
+        // .then(publisher => {
+        //     console.log(publisher);
+        // })
+        // .catch(error => {   //handles rejected promise
+        //     console.log(error);
+        // });
+
+        
+        /////////////////////
+        // async await
+
+        async function getRecipesAW() {
+            const IDs = await getIDs;
             console.log(IDs);
-            return getRecipe(IDs[2]); // returns
-        })
-        .then(recipe => {   // equal to what above then method returns
+            const recipe = await getRecipe(IDs[2]);
             console.log(recipe);
-            return getRelated('Vikas Kumar');
-        })
-        .then(publisher => {
-            console.log(publisher);
-        })
-        .catch(error => {   //handles rejected promise
-            console.log(error);
-        })
+            const related = await getRelated('Vikas Kumar');
+            console.log(related);
+        }
+        getRecipesAW();
 
     </script>
 </body>
