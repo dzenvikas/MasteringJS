@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <title>Asynchronous</title>
 </head>
+
 <body>
     <script>
         // function getRecipe() {
@@ -24,7 +26,7 @@
 
 
         /////////Promise
-
+        /*
         const getIDs = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([34, 64, 13, 64]);
@@ -65,11 +67,11 @@
         // .catch(error => {   //handles rejected promise
         //     console.log(error);
         // });
-
+        */
 
         /////////////////////
         // async await
-
+        /*
         async function getRecipesAW() {
             const IDs = await getIDs;
             console.log(IDs);
@@ -82,7 +84,20 @@
         getRecipesAW().then(result => {
             console.log(`${result} is the best ever!`);
         });
+        */
+
+        fetch('https://crossorigin.me/https://www.api.github.com/users/dzenvikas/')
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+
+
 
     </script>
 </body>
+
 </html>
